@@ -1,5 +1,10 @@
 # AI Prompt Router
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://html.com/)
+[![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html)
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
 A vibe-coded, JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just a single-page application.
 
 ## Features
@@ -34,3 +39,16 @@ Because this requires no build pipeline and uses zero external libraries, to run
 - `index.html`: Main HTML skeletal structure and UI.
 - `styles.css`: All application styling (dark theme + glassmorphism + responsive grid).
 - `script.js`: Prompt analysis engine, routing, tie-breaker logic, local storage logic, and history controls.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/UrbanNinja1010/12.08-AI-router/issues) if you want to contribute.
+
+## Author
+
+**UrbanNinja1010**
+- GitHub: [@UrbanNinja1010](https://github.com/UrbanNinja1010)
+
+## License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.

@@ -300,10 +300,10 @@ function analyzePrompt() {
     // Overwrite if no keywords matched at all
     if (totalScore === 0) {
         confidenceStr = "Best Guess";
-        winnerKey = "ChatGPT"; // Default for generic prompts
-        runnerUpKey = "Claude";
-        primaryReason = "No specific routing keywords found. Defaulting to ChatGPT as a highly versatile general-purpose assistant.";
-        secondaryReason = "Claude is also a great all-around fallback option.";
+        winnerKey = "Claude"; // Default for generic prompts
+        runnerUpKey = "ChatGPT";
+        primaryReason = "No specific routing keywords found. Defaulting to Claude as a highly versatile general-purpose assistant.";
+        secondaryReason = "ChatGPT is also a great all-around fallback option.";
     } else {
         // Standard confidence logic
         if (winnerScore >= runnerUpScore * 2 && runnerUpScore > 0) {
