@@ -1,6 +1,6 @@
 # AI Prompt Router
 
-A beautiful, vanilla JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just an elegant single-page application.
+A vibe-codede, JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just a single-page application.
 
 ## Features
 
@@ -27,7 +27,7 @@ If you don't like the defaults, simply click the Settings (gear) icon in the top
 
 ## Technical Setup
 
-Because this requires no build pipeline and uses zero external libraries, to run the application you only need to open the `index.html` file in your preferred web browser.
+Because this requires no build pipeline and uses zero external libraries, to run the application you only need to open [the page](https://urbanninja1010.github.io/12.08-AI-router/) in your preferred web browser.
 
 ## File Structure
 
