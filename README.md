@@ -4,6 +4,7 @@
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://html.com/)
 [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html)
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/urban_ninja)
 
 A vibe-coded, JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just a single-page application.
 
@@ -48,6 +49,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **UrbanNinja1010**
 - GitHub: [@UrbanNinja1010](https://github.com/UrbanNinja1010)
+- Ko-fi: [@urban_ninja](https://ko-fi.com/urban_ninja)
 
 ## License
 
