@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Router</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <button class="settings-btn" id="openSettingsBtn" title="Routing Settings">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+        </svg>
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>AI Prompt Router</h1>
+            <p class="subtitle">Find the perfect AI assistant for your task</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="promptInput"
+                    placeholder="What do you want to do? (e.g., 'Write a long essay about space exploration' or 'Find the latest news about AI')"></textarea>
+                <div class="controls">
+                    <span class="hint" id="shortcutHint">
+                        <span class="kbd">Enter</span>
+                        to analyze
+                    </span>
+                    <button class="btn-route" id="routeBtn">Analyze</button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <div class="recommendation-card" id="recommendationCard">
+                    <div class="confidence-badge" id="confidenceBadge">
+                        <span id="confidenceIcon">●</span>
+                        <span id="confidenceText">Analyzing...</span>
+                    </div>
+                    <h2 class="winner-name" id="winnerName">Claude</h2>
+                    <p class="winner-reason" id="winnerReason">Best suited for this prompt based on your requirements.
+                    </p>
+                    <p class="secondary-recommendation" id="secondaryRecommendation" style="display: none;"></p>
+                </div>
+
+                <div class="providers-grid" id="providersGrid">
+                    <button class="provider-btn" id="btn-claude"
+                        onclick="openProvider('Claude', 'https://claude.ai/new')">
+                        <div class="provider-icon icon-claude">C</div>
+                        <span class="btn-text">Claude</span>
+                        <span class="action-hint">Copy & Open ↗</span>
+                    </button>
+                    <button class="provider-btn" id="btn-gemini"
+                        onclick="openProvider('Gemini', 'https://gemini.google.com/app')">
+                        <div class="provider-icon icon-gemini">G</div>
+                        <span class="btn-text">Gemini</span>
+                        <span class="action-hint">Copy & Open ↗</span>
+                    </button>
+                    <button class="provider-btn" id="btn-chatgpt"
+                        onclick="openProvider('ChatGPT', 'https://chatgpt.com')">
+                        <div class="provider-icon icon-chatgpt">GPT</div>
+                        <span class="btn-text">ChatGPT</span>
+                        <span class="action-hint">Copy & Open ↗</span>
+                    </button>
+                    <button class="provider-btn" id="btn-grok" onclick="openProvider('Grok', 'https://grok.com')">
+                        <div class="provider-icon icon-grok">X</div>
+                        <span class="btn-text">Grok</span>
+                        <span class="action-hint">Copy & Open ↗</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-section" id="historySection" style="display: none;">
+                <h3 class="history-title">Recent Prompts</h3>
+                <div class="history-list" id="historyList">
+                    <!-- History items will be populated here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toastMsg">Prompt copied to clipboard!</span>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Routing Rules</h2>
+                <button class="close-btn" id="closeSettingsBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Customize the keywords used to detect which prompt should go to which AI assistant. Separate keywords
+                with commas.
+            </p>
+
+            <div id="settingsForm">
+                <!-- Provider inputs will be generated here -->
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-reset" id="resetSettingsBtn">Reset to Defaults</button>
+                <button class="btn-cancel" id="cancelSettingsBtn">Cancel</button>
+                <button class="btn-save" id="saveSettingsBtn">Save Rules</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
