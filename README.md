@@ -1,6 +1,6 @@
 # AI Prompt Router
 
-A vibe-codede, JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just a single-page application.
+A vibe-coded, JavaScript utility tool that takes your prompt, analyzes it, and intelligently routes you to the optimal AI assistant (Claude, Gemini, ChatGPT, or Grok) with a single click. No backend, no frameworks, just a single-page application.
 
 ## Features
 
